@@ -7,7 +7,6 @@ venv/
 .venv/
 .DS_Store
 .claude/
-data/*.parquet
 *.egg-info/
 dist/
 build/
