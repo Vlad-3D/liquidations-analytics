@@ -50,7 +50,8 @@ def filter_data(
     filtered = df.copy()
 
     if date_range and len(date_range) == 2:
-        start, end = pd.to_datetime(date_range[0]), pd.to_datetime(date_range[1])
+        start = pd.to_datetime(date_range[0])
+        end = pd.to_datetime(date_range[1]) + pd.Timedelta(days=1) - pd.Timedelta(seconds=1)
         filtered = filtered[
             (filtered["datetime"] >= start) & (filtered["datetime"] <= end)
         ]
