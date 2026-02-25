@@ -28,6 +28,8 @@ from datetime import date
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+from src.auth import check_password
+check_password()
 from src.collateral_fetcher import (
     compute_open_position_accrued,
     compute_realized_interest,

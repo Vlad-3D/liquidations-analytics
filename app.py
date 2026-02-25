@@ -10,18 +10,8 @@ st.set_page_config(
 )
 
 # --- Simple password gate ---
-if "authenticated" not in st.session_state:
-    st.session_state.authenticated = False
-
-if not st.session_state.authenticated:
-    st.markdown("## 🔒 Dashboard")
-    pwd = st.text_input("Enter password to continue", type="password")
-    if pwd == "BabeRevenue2028":
-        st.session_state.authenticated = True
-        st.rerun()
-    elif pwd:
-        st.error("Wrong password")
-    st.stop()
+from src.auth import check_password
+check_password()
 
 # --- Define pages with st.Page + st.navigation ---
 pages = {

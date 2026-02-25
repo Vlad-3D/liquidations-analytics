@@ -1,6 +1,8 @@
 """User Behavior page — pre-liquidation analysis for positions >= 1 BTC."""
 
 import streamlit as st
+from src.auth import check_password
+check_password()
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px

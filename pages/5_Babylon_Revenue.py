@@ -34,6 +34,8 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+from src.auth import check_password
+check_password()
 
 from src.collateral_fetcher import load_all
 from src.collateral_queries import STABLECOINS

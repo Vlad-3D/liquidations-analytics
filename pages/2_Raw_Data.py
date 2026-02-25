@@ -1,6 +1,8 @@
 """Raw Data page — full table with Etherscan links, filters and CSV export."""
 
 import streamlit as st
+from src.auth import check_password
+check_password()
 import pandas as pd
 from src.queries import ASSETS
 from src.ui_helpers import asset_selector

@@ -28,6 +28,8 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+from src.auth import check_password
+check_password()
 from scipy.stats import linregress
 
 from src.collateral_fetcher import (
