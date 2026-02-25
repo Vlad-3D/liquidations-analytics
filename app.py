@@ -9,11 +9,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# --- Simple password gate ---
-from src.auth import check_password
-check_password()
-
 # --- Define pages with st.Page + st.navigation ---
+# Navigation MUST be called before anything else so sidebar renders correctly
 pages = {
     "Liquidation Analytics (old)": [
         st.Page("pages/0_Dashboard.py", title="Liquidations Analytics"),
@@ -28,4 +25,9 @@ pages = {
 }
 
 pg = st.navigation(pages)
+
+# --- Simple password gate (after navigation so sidebar renders) ---
+from src.auth import check_password
+check_password()
+
 pg.run()
